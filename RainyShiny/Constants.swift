@@ -14,8 +14,6 @@ let LONGITUDE = "&lon=123"
 let APP_ID = "&appid="
 let API_KEY = "44e73c22b87915f56b210a8f4729d89c"
 
-var testString = "http://api.openweathermap.org/data/2.5/weather?lat=-36&lon=123&appid=44e73c22b87915f56b210a8f4729d89c"
-
 typealias DownloadComplete = () -> ()
 
 let CURRENT_WEATHER_URL = "\(BASE_URL)\(LATITUDE)\(LONGITUDE)\(APP_ID)\(API_KEY)"

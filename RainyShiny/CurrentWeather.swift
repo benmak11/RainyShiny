@@ -11,20 +11,19 @@ import Alamofire
 
 class CurrentWeather {
     
-    var _cityName: String!
-    var _date: String!
-    var _weatherType: String!
-    var _currentTemp: Double!
-    //var _highTemp: String!
-    
+    private var _cityName: String!
+    private var _date: String!
+    private var _weatherType: String!
+    private var _currentTemp: Double!
     
     var cityName: String {
-        
-        if _cityName == nil {
-            _cityName = ""
+        get{
+            if _cityName == nil {
+                return ""
+            } else {
+                return _cityName
+            }
         }
-        
-        return _cityName
     }
     
     var date: String {
@@ -42,32 +41,37 @@ class CurrentWeather {
         let currentDate = dateFormatter.string(from: Date())
         self._date = "Today, \(currentDate)"
         
+        print(_date)
         return _date
     }
     
     var weatherType: String {
         
-        if _weatherType == nil {
-            _weatherType = ""
+        get{
+            if _weatherType == nil {
+                return ""
+            } else {
+                return _weatherType
+            }
         }
-        
-        return _weatherType
     }
     
     var currentTemp: Double {
         
-        if _currentTemp == nil {
-            _currentTemp = 0.0
+        get{
+            if _currentTemp == nil {
+                return 0.0
+            } else{
+                return _currentTemp
+            }
         }
-        
-        return _currentTemp
     }
     
     func downloadWeatherDetails(completed: DownloadComplete) {
         
         // Alamofire download
         let currentWeatherURL = URL(string: CURRENT_WEATHER_URL)!
-        Alamofire.request("\(currentWeatherURL)", withMethod: .get).responseJSON() { response in
+        Alamofire.request(currentWeatherURL, withMethod: .get).responseJSON { response in
             
             let result = response.result
             
@@ -76,7 +80,7 @@ class CurrentWeather {
                 // Grabbing the name of the city here
                 if let name = dict["name"] as? String {
                     self._cityName = name.capitalized
-                    print(self._cityName)
+                    
                 }
                 
                 // Grabbing the weather type
@@ -84,7 +88,7 @@ class CurrentWeather {
                     
                     if let main = weather[0]["main"] as? String {
                         self._weatherType = main.capitalized
-                        print(self._weatherType)
+                        
                     }
                 }
                 
@@ -95,12 +99,15 @@ class CurrentWeather {
                         let kelvinToFarenheit = Double(round(10 * kelvinToFarenheitPreDivision/10))
                         
                         self._currentTemp = kelvinToFarenheit
-                        print(self._currentTemp)
+                        
                     }
                 }
                 
-                
             }
+            
+            print(self._cityName)
+            print(self._weatherType)
+            print(self._currentTemp)
             
         }
         completed()
