@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		190E801AA6578E3E94780E53 /* Pods_RainyShiny.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04AC5E979D6235FADA25F19F /* Pods_RainyShiny.framework */; };
 		A70848DF1D7C719F0046E032 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70848DE1D7C719F0046E032 /* AppDelegate.swift */; };
-		A70848E11D7C719F0046E032 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70848E01D7C719F0046E032 /* ViewController.swift */; };
+		A70848E11D7C719F0046E032 /* WeatherVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70848E01D7C719F0046E032 /* WeatherVC.swift */; };
 		A70848E41D7C719F0046E032 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A70848E21D7C719F0046E032 /* Main.storyboard */; };
 		A70848E61D7C719F0046E032 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A70848E51D7C719F0046E032 /* Assets.xcassets */; };
 		A70848E91D7C719F0046E032 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A70848E71D7C719F0046E032 /* LaunchScreen.storyboard */; };
@@ -20,7 +20,7 @@
 		0C12E496D8692EDD92BD3700 /* Pods-RainyShiny.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RainyShiny.release.xcconfig"; path = "Pods/Target Support Files/Pods-RainyShiny/Pods-RainyShiny.release.xcconfig"; sourceTree = "<group>"; };
 		A70848DB1D7C719F0046E032 /* RainyShiny.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RainyShiny.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A70848DE1D7C719F0046E032 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A70848E01D7C719F0046E032 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A70848E01D7C719F0046E032 /* WeatherVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherVC.swift; sourceTree = "<group>"; };
 		A70848E31D7C719F0046E032 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A70848E51D7C719F0046E032 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A70848E81D7C719F0046E032 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -79,7 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				A70848DE1D7C719F0046E032 /* AppDelegate.swift */,
-				A70848E01D7C719F0046E032 /* ViewController.swift */,
+				A70848E01D7C719F0046E032 /* WeatherVC.swift */,
 				A70848E21D7C719F0046E032 /* Main.storyboard */,
 				A70848E51D7C719F0046E032 /* Assets.xcassets */,
 				A70848E71D7C719F0046E032 /* LaunchScreen.storyboard */,
@@ -172,7 +172,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		365E114CA90BB04D6AB96EEB /* [CP] Copy Pods Resources */ = {
@@ -212,7 +212,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A70848E11D7C719F0046E032 /* ViewController.swift in Sources */,
+				A70848E11D7C719F0046E032 /* WeatherVC.swift in Sources */,
 				A70848DF1D7C719F0046E032 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
