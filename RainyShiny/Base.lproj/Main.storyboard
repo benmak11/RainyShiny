@@ -146,11 +146,11 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="currentTempLbl" destination="G3r-kI-vV8" id="eyK-aA-Kqv"/>
+                        <outlet property="currentTempLbl" destination="G3r-kI-vV8" id="2fd-NV-HIB"/>
                         <outlet property="currentWeatherImage" destination="NQ1-Oh-07k" id="UJM-DW-5Cf"/>
-                        <outlet property="currentWeatherTypeLbl" destination="PfX-Vq-0h4" id="hch-um-WlU"/>
+                        <outlet property="currentWeatherTypeLbl" destination="PfX-Vq-0h4" id="tFY-bT-b2f"/>
                         <outlet property="dateLbl" destination="9nF-1b-7Tc" id="hW7-de-Imw"/>
-                        <outlet property="locationLbl" destination="FF1-wi-JpV" id="1F8-Ky-0T8"/>
+                        <outlet property="locationLbl" destination="FF1-wi-JpV" id="lzG-AM-HqF"/>
                         <outlet property="tableView" destination="592-xb-UMR" id="gep-a5-GeV"/>
                     </connections>
                 </viewController>

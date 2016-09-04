@@ -19,7 +19,7 @@ class CurrentWeather {
     var cityName: String {
         get{
             if _cityName == nil {
-                return ""
+                return "no city"
             } else {
                 return _cityName
             }
@@ -29,7 +29,7 @@ class CurrentWeather {
     var date: String {
         
         if _date == nil {
-            _date = ""
+            _date = "n date"
         }
         
         // Starting to format the date
@@ -41,7 +41,6 @@ class CurrentWeather {
         let currentDate = dateFormatter.string(from: Date())
         self._date = "Today, \(currentDate)"
         
-        print(_date)
         return _date
     }
     
@@ -49,7 +48,7 @@ class CurrentWeather {
         
         get{
             if _weatherType == nil {
-                return ""
+                return "no weather type"
             } else {
                 return _weatherType
             }
@@ -74,6 +73,7 @@ class CurrentWeather {
         Alamofire.request(currentWeatherURL, withMethod: .get).responseJSON { response in
             
             let result = response.result
+            //print(response)
             
             if let dict = result.value as? Dictionary<String, AnyObject> {
                 
@@ -104,13 +104,7 @@ class CurrentWeather {
                 }
                 
             }
-            
-            print(self._cityName)
-            print(self._weatherType)
-            print(self._currentTemp)
-            
+            completed()
         }
-        completed()
-        
     }
 }
