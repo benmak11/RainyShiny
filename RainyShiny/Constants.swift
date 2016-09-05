@@ -7,12 +7,15 @@
 //
 
 import Foundation
+import UIKit
 
 let BASE_URL = "http://api.openweathermap.org/data/2.5/weather?"
 let LATITUDE = "lat="
 let LONGITUDE = "&lon="
 let APP_ID = "&appid="
 let API_KEY = "44e73c22b87915f56b210a8f4729d89c"
+
+let SHADOW_COLOR: CGFloat = 157.0 / 255.0    //Greyish shadow color
 
 typealias DownloadComplete = () -> ()
 

@@ -119,7 +119,7 @@ class WeatherVC: UIViewController, UITableViewDelegate, UITableViewDataSource, C
     func updateMainUI() {
         
         dateLbl.text = currentWeather.date
-        currentTempLbl.text = "\(currentWeather.currentTemp)"
+        currentTempLbl.text = "\(currentWeather.currentTemp) °F"
         currentWeatherTypeLbl.text = currentWeather.weatherType
         locationLbl.text = currentWeather.cityName
         currentWeatherImage.image = UIImage(named: currentWeather.weatherType)
