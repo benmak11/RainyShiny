@@ -10,6 +10,6 @@ target 'RainyShiny' do
   # Pods for RainyShiny
   pod 'Alamofire',
       :git => 'https://github.com/Alamofire/Alamofire.git',
-      :branch => 'swift3'
+      :branch => 'swift3-rebased'
 
 end
