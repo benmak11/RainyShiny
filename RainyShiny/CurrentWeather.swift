@@ -73,7 +73,6 @@ class CurrentWeather {
         Alamofire.request(CURRENT_WEATHER_URL, method: .get).responseJSON { response in
             
             let result = response.result
-            //print(response)
             
             if let dict = result.value as? Dictionary<String, AnyObject> {
                 
